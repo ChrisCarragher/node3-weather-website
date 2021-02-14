@@ -9,11 +9,11 @@ const forecast = (latitude, longitude, callback) =>{
         } else if (body.error){
             callback('Unable to get the Weather')
         }else {
-            console.log(body.current)
-            const {temperature, feelslike} = body.current
+            //console.log(body.current)
+            const {temperature, feelslike, humidity} = body.current
             //console.log(response.body.location.region)
             let description = `It is ${body.current.weather_descriptions}`
-            callback(undefined, `It is currently ${temperature} degrees out. It feels like ${feelslike} degrees out. ${description}`)
+            callback(undefined, `It is currently ${temperature} degrees out. It feels like ${feelslike} degrees out. Todays humidity is ${humidity}%. ${description}`)
         }
     })
 }
